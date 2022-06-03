@@ -27,6 +27,7 @@ namespace Project_Bioskop
         private void Form1_Load(object sender, EventArgs e)
         {
             // tes jessi
+            //tes elyora
         }
     }
 }
