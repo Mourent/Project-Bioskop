@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Project_Bioskop
 {
-    public partial class Form2 : Form
+    public partial class FormRegular : Form
     {
-        public Form2()
+        public FormRegular()
         {
             InitializeComponent();
         }

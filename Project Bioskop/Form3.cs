@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Project_Bioskop
 {
-	public partial class Form3 : Form
+	public partial class FormThePremiere : Form
 	{
-		public Form3()
+		public FormThePremiere()
 		{
 			InitializeComponent();
 		}
-	}
+
+        private void btnA1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

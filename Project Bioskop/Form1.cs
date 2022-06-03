@@ -28,7 +28,7 @@ namespace Project_Bioskop
         private void btnGoStudio_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 form2 = new Form2();
+            FormRegular form2 = new FormRegular();
             form2.Show();
         }
 
