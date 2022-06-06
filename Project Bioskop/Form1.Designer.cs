@@ -65,15 +65,16 @@ namespace Project_Bioskop
             // cbStudio
             // 
             this.cbStudio.FormattingEnabled = true;
-            this.cbStudio.Location = new System.Drawing.Point(225, 228);
+            this.cbStudio.Location = new System.Drawing.Point(225, 260);
             this.cbStudio.Name = "cbStudio";
             this.cbStudio.Size = new System.Drawing.Size(206, 21);
             this.cbStudio.TabIndex = 17;
+            this.cbStudio.SelectedIndexChanged += new System.EventHandler(this.cbStudio_SelectedIndexChanged);
             // 
             // labelStudio
             // 
             this.labelStudio.AutoSize = true;
-            this.labelStudio.Location = new System.Drawing.Point(176, 228);
+            this.labelStudio.Location = new System.Drawing.Point(176, 260);
             this.labelStudio.Name = "labelStudio";
             this.labelStudio.Size = new System.Drawing.Size(43, 13);
             this.labelStudio.TabIndex = 16;
@@ -90,10 +91,11 @@ namespace Project_Bioskop
             // cbFilm
             // 
             this.cbFilm.FormattingEnabled = true;
-            this.cbFilm.Location = new System.Drawing.Point(225, 263);
+            this.cbFilm.Location = new System.Drawing.Point(225, 223);
             this.cbFilm.Name = "cbFilm";
             this.cbFilm.Size = new System.Drawing.Size(206, 21);
             this.cbFilm.TabIndex = 14;
+            this.cbFilm.SelectedIndexChanged += new System.EventHandler(this.cbFilm_SelectedIndexChanged);
             // 
             // dtpTanggal
             // 
@@ -101,6 +103,7 @@ namespace Project_Bioskop
             this.dtpTanggal.Name = "dtpTanggal";
             this.dtpTanggal.Size = new System.Drawing.Size(251, 20);
             this.dtpTanggal.TabIndex = 13;
+            this.dtpTanggal.ValueChanged += new System.EventHandler(this.dtpTanggal_ValueChanged);
             // 
             // labelJamTayang
             // 
@@ -114,7 +117,7 @@ namespace Project_Bioskop
             // labelFilm
             // 
             this.labelFilm.AutoSize = true;
-            this.labelFilm.Location = new System.Drawing.Point(188, 266);
+            this.labelFilm.Location = new System.Drawing.Point(188, 226);
             this.labelFilm.Name = "labelFilm";
             this.labelFilm.Size = new System.Drawing.Size(31, 13);
             this.labelFilm.TabIndex = 11;
