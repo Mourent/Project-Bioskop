@@ -27,6 +27,18 @@ namespace Project_Bioskop
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
 
         }
     }

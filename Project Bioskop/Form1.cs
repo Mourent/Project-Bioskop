@@ -74,6 +74,8 @@ namespace Project_Bioskop
                 FormRegular formRegular = new FormRegular();
                 formRegular.Show();
             }
+
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
