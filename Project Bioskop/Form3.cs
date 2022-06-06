@@ -25,7 +25,23 @@ namespace Project_Bioskop
         public MySqlDataReader sqlDataReader;
         public string sqlQuery;
 
-        
+        private void FormThePremiere_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
+        }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnA1_Click(object sender, EventArgs e)
         {
             if (btnA1.BackColor == Color.Yellow)
@@ -36,13 +52,6 @@ namespace Project_Bioskop
             {
                 btnA1.BackColor = Color.Yellow;
             }
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.Show();
         }
 
         private void btnA2_Click(object sender, EventArgs e)
@@ -2434,5 +2443,6 @@ namespace Project_Bioskop
                 btnH25.BackColor = Color.Yellow;
             }
         }
-    }
+
+	}
 }

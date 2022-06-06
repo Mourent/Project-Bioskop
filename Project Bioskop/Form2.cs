@@ -27,7 +27,7 @@ namespace Project_Bioskop
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace Project_Bioskop
         {
 
         }
-        
+
         private void btnA1_Click(object sender, EventArgs e)
         {
             if (btnA1.BackColor == Color.Yellow)
@@ -60,7 +60,7 @@ namespace Project_Bioskop
             {
                 btnA2.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA2.BackColor = Color.Yellow;
             }
@@ -72,7 +72,7 @@ namespace Project_Bioskop
             {
                 btnA3.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA3.BackColor = Color.Yellow;
             }
@@ -84,7 +84,7 @@ namespace Project_Bioskop
             {
                 btnA4.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA4.BackColor = Color.Yellow;
             }
@@ -96,7 +96,7 @@ namespace Project_Bioskop
             {
                 btnA5.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA5.BackColor = Color.Yellow;
             }
@@ -108,7 +108,7 @@ namespace Project_Bioskop
             {
                 btnA6.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA6.BackColor = Color.Yellow;
             }
@@ -120,7 +120,7 @@ namespace Project_Bioskop
             {
                 btnA7.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA7.BackColor = Color.Yellow;
             }
@@ -132,7 +132,7 @@ namespace Project_Bioskop
             {
                 btnA8.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA8.BackColor = Color.Yellow;
             }
@@ -144,9 +144,21 @@ namespace Project_Bioskop
             {
                 btnA9.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA9.BackColor = Color.Yellow;
+            }
+        }
+
+        private void btnA10_Click(object sender, EventArgs e)
+        {
+            if (btnA10.BackColor == Color.Yellow)
+            {
+                btnA10.BackColor = Color.PaleGreen;
+            }
+            else
+            {
+                btnA10.BackColor = Color.Yellow;
             }
         }
 
@@ -156,7 +168,7 @@ namespace Project_Bioskop
             {
                 btnA11.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA11.BackColor = Color.Yellow;
             }
@@ -168,7 +180,7 @@ namespace Project_Bioskop
             {
                 btnA12.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA12.BackColor = Color.Yellow;
             }
@@ -180,7 +192,7 @@ namespace Project_Bioskop
             {
                 btnA13.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA13.BackColor = Color.Yellow;
             }
@@ -192,7 +204,7 @@ namespace Project_Bioskop
             {
                 btnA14.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA14.BackColor = Color.Yellow;
             }
@@ -204,7 +216,7 @@ namespace Project_Bioskop
             {
                 btnA15.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA15.BackColor = Color.Yellow;
             }
@@ -216,7 +228,7 @@ namespace Project_Bioskop
             {
                 btnA16.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA16.BackColor = Color.Yellow;
             }
@@ -228,7 +240,7 @@ namespace Project_Bioskop
             {
                 btnA17.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA17.BackColor = Color.Yellow;
             }
@@ -240,7 +252,7 @@ namespace Project_Bioskop
             {
                 btnA18.BackColor = Color.PaleGreen;
             }
-            else 
+            else
             {
                 btnA18.BackColor = Color.Yellow;
             }
@@ -920,13 +932,13 @@ namespace Project_Bioskop
 
         private void btnE3_Click(object sender, EventArgs e)
         {
-            if (btnE3.BackColor == Color.Yellow)
+            if (btnE2.BackColor == Color.Yellow)
             {
-                btnE3.BackColor = Color.PaleGreen;
+                btnE2.BackColor = Color.PaleGreen;
             }
             else
             {
-                btnE3.BackColor = Color.Yellow;
+                btnE2.BackColor = Color.Yellow;
             }
         }
 
@@ -1448,13 +1460,13 @@ namespace Project_Bioskop
 
         private void btnG11_Click(object sender, EventArgs e)
         {
-            if (btnG11.BackColor == Color.Yellow)
+            if (btnG10.BackColor == Color.Yellow)
             {
-                btnG11.BackColor = Color.PaleGreen;
+                btnG10.BackColor = Color.PaleGreen;
             }
             else
             {
-                btnG11.BackColor = Color.Yellow;
+                btnG10.BackColor = Color.Yellow;
             }
         }
 
@@ -1539,18 +1551,6 @@ namespace Project_Bioskop
             else
             {
                 btnG18.BackColor = Color.Yellow;
-            }
-        }
-
-        private void btnA10_Click(object sender, EventArgs e)
-        {
-            if (btnA10.BackColor == Color.Yellow)
-            {
-                btnA10.BackColor = Color.PaleGreen;
-            }
-            else
-            {
-                btnA10.BackColor = Color.Yellow;
             }
         }
     }
