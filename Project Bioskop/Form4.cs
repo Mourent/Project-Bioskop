@@ -96,5 +96,10 @@ namespace Project_Bioskop
         {
 
         }
+
+        private void FormDolbyAtmos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
