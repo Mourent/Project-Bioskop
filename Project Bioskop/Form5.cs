@@ -16,6 +16,9 @@ namespace Project_Bioskop
 		public string idFilm { get; set; }
 		public string idStudio { get; set; }
 		public string tgl { get; set; }
+		public string Studio { get; set; }
+		public string Film { get; set; }
+		public string JamTayang { get; set; }
 		public FormImax()
         {
             InitializeComponent();
@@ -37,6 +40,11 @@ namespace Project_Bioskop
 
 		private void FormImax_Load(object sender, EventArgs e)
 		{
+			labelOutputTgl.Text = tgl;
+			labelOutputFilm.Text = Film;
+			labelOutputStudio.Text = Studio;
+			labelOutputJamTayang.Text = JamTayang;
+
 			DataTable kursiTerisi = new DataTable(); // buat kursi yg udh dibeli
 			sqlQuery = "select p.NOMOR_KURSI from PENJUALAN_TIKET p,JADWAL_TAYANG j where p.ID_JADWAL = j.ID_JADWAL and j.ID_STUDIO = '" + idStudio + "' and j.TANGGAL_TAYANG = '" + tgl + "' and j.ID_FILM = '" + idFilm + "';";
 			sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);

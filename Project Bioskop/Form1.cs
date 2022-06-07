@@ -60,6 +60,9 @@ namespace Project_Bioskop
                 formPremiere.idStudio = cbStudio.SelectedValue.ToString();
                 formPremiere.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
                 formPremiere.idFilm = cbFilm.SelectedValue.ToString();
+                formPremiere.Film = cbFilm.Text;
+                formPremiere.Studio = cbStudio.Text;
+                formPremiere.JamTayang = cbJamTayang.Text;
                 formPremiere.Show();
             }
             else if (dtStudioImax.Rows.Count > 0)
@@ -68,6 +71,9 @@ namespace Project_Bioskop
                 formImax.idStudio = cbStudio.SelectedValue.ToString();
                 formImax.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
                 formImax.idFilm = cbFilm.SelectedValue.ToString();
+                formImax.Film = cbFilm.Text;
+                formImax.Studio = cbStudio.Text;
+                formImax.JamTayang = cbJamTayang.Text;
                 formImax.Show();
             }
             else if(dtStudioDolby.Rows.Count > 0)
@@ -76,6 +82,9 @@ namespace Project_Bioskop
                 formDolby.idStudio = cbStudio.SelectedValue.ToString();
                 formDolby.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
                 formDolby.idFilm = cbFilm.SelectedValue.ToString();
+                formDolby.Film = cbFilm.Text;
+                formDolby.Studio = cbStudio.Text;
+                formDolby.JamTayang = cbJamTayang.Text;
                 formDolby.Show();
             }
             else if(dtStudioRegular.Rows.Count > 0)
@@ -84,6 +93,9 @@ namespace Project_Bioskop
                 formRegular.idStudio = cbStudio.SelectedValue.ToString();
                 formRegular.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
                 formRegular.idFilm = cbFilm.SelectedValue.ToString();
+                formRegular.Film = cbFilm.Text;
+                formRegular.Studio = cbStudio.Text;
+                formRegular.JamTayang = cbJamTayang.Text;
                 formRegular.Show();
             }
 
