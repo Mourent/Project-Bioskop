@@ -57,21 +57,33 @@ namespace Project_Bioskop
             if (dtStudioPremiere.Rows.Count > 0)
             {
                 FormThePremiere formPremiere = new FormThePremiere();
+                formPremiere.idStudio = cbStudio.SelectedValue.ToString();
+                formPremiere.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
+                formPremiere.idFilm = cbFilm.SelectedValue.ToString();
                 formPremiere.Show();
             }
             else if (dtStudioImax.Rows.Count > 0)
             {
                 FormImax formImax = new FormImax();
+                formImax.idStudio = cbStudio.SelectedValue.ToString();
+                formImax.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
+                formImax.idFilm = cbFilm.SelectedValue.ToString();
                 formImax.Show();
             }
             else if(dtStudioDolby.Rows.Count > 0)
             {
                 FormDolbyAtmos formDolby = new FormDolbyAtmos();
+                formDolby.idStudio = cbStudio.SelectedValue.ToString();
+                formDolby.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
+                formDolby.idFilm = cbFilm.SelectedValue.ToString();
                 formDolby.Show();
             }
             else if(dtStudioRegular.Rows.Count > 0)
             {
                 FormRegular formRegular = new FormRegular();
+                formRegular.idStudio = cbStudio.SelectedValue.ToString();
+                formRegular.tgl = dtpTanggal.Value.ToString("yyyy-MM-dd");
+                formRegular.idFilm = cbFilm.SelectedValue.ToString();
                 formRegular.Show();
             }
 

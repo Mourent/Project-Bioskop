@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.Collections;
 namespace Project_Bioskop
 {
 	public partial class FormThePremiere : Form
 	{
-		public FormThePremiere()
+        public string idFilm { get; set; }
+        public string idStudio { get; set; }
+        public string tgl { get; set; }
+        public FormThePremiere()
 		{
 			InitializeComponent();
 		}
@@ -27,7 +30,34 @@ namespace Project_Bioskop
 
         private void FormThePremiere_Load(object sender, EventArgs e)
         {
+            DataTable kursiTerisi = new DataTable(); // buat kursi yg udh dibeli
+            sqlQuery = "select p.NOMOR_KURSI from PENJUALAN_TIKET p,JADWAL_TAYANG j where p.ID_JADWAL = j.ID_JADWAL and j.ID_STUDIO = '" + idStudio + "' and j.TANGGAL_TAYANG = '" + tgl + "' and j.ID_FILM = '" + idFilm + "';";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(kursiTerisi);
+            string[] arrray = kursiTerisi.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+            var arlistKursi = new ArrayList(); // buat nampung yg udh dipisah ; nya
 
+            for (int i = 0; i < arrray.Length; i++)
+            {
+                string[] subs = arrray[i].ToString().Split(';');
+                foreach (var arr in subs)
+                {
+                    arlistKursi.Add(arr);
+                }
+            }
+            foreach (var button in this.Controls.OfType<Button>())
+            {
+                foreach (var kursi in arlistKursi)
+                {
+                    if (button.Text == kursi.ToString())
+                    {
+                        button.Enabled = false;
+                        button.BackColor = Color.Red;
+                    }
+                }
+
+            }
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -2444,5 +2474,104 @@ namespace Project_Bioskop
             }
         }
 
-	}
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelC_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelB_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelA_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelScreen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelH_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelG_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelF_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelE_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelD_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }

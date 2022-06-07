@@ -8,12 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-
+using System.Collections;
 namespace Project_Bioskop
 {
     public partial class FormImax : Form
     {
-        public FormImax()
+		public string idFilm { get; set; }
+		public string idStudio { get; set; }
+		public string tgl { get; set; }
+		public FormImax()
         {
             InitializeComponent();
         }
@@ -34,7 +37,34 @@ namespace Project_Bioskop
 
 		private void FormImax_Load(object sender, EventArgs e)
 		{
+			DataTable kursiTerisi = new DataTable(); // buat kursi yg udh dibeli
+			sqlQuery = "select p.NOMOR_KURSI from PENJUALAN_TIKET p,JADWAL_TAYANG j where p.ID_JADWAL = j.ID_JADWAL and j.ID_STUDIO = '" + idStudio + "' and j.TANGGAL_TAYANG = '" + tgl + "' and j.ID_FILM = '" + idFilm + "';";
+			sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+			sqlAdapter = new MySqlDataAdapter(sqlCommand);
+			sqlAdapter.Fill(kursiTerisi);
+			string[] arrray = kursiTerisi.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
+			var arlistKursi = new ArrayList(); // buat nampung yg udh dipisah ; nya
 
+			for (int i = 0; i < arrray.Length; i++) 
+			{
+				string[] subs = arrray[i].ToString().Split(';');
+				foreach (var arr in subs)
+				{
+					arlistKursi.Add(arr);
+				}
+			}
+			foreach (var button in this.Controls.OfType<Button>())
+			{
+				foreach (var kursi in arlistKursi)
+				{
+					if (button.Text == kursi.ToString())
+					{
+						button.Enabled = false;
+						button.BackColor = Color.Red;
+					}
+				}
+
+			}
 		}
 
 		private void btnConfirm_Click(object sender, EventArgs e)
