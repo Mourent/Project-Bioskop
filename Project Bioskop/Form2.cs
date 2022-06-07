@@ -1460,13 +1460,13 @@ namespace Project_Bioskop
 
         private void btnG11_Click(object sender, EventArgs e)
         {
-            if (btnG10.BackColor == Color.Yellow)
+            if (btnG11.BackColor == Color.Yellow)
             {
-                btnG10.BackColor = Color.PaleGreen;
+                btnG11.BackColor = Color.PaleGreen;
             }
             else
             {
-                btnG10.BackColor = Color.Yellow;
+                btnG11.BackColor = Color.Yellow;
             }
         }
 
