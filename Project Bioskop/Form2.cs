@@ -78,7 +78,13 @@ namespace Project_Bioskop
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            FormKonfirmasi formKonfirmasi = new FormKonfirmasi();
+            formKonfirmasi.Film = labelOutputFilm.Text;
+            formKonfirmasi.tgl = labelOutputTgl.Text;
+            formKonfirmasi.JamTayang = labelOutputJamTayang.Text;
+            formKonfirmasi.Studio = labelOutputStudio.Text;
+            formKonfirmasi.Show();
         }
 
         private void btnA1_Click(object sender, EventArgs e)
