@@ -40,7 +40,7 @@ namespace Project_Bioskop
 			labelOutputJamTayang.Text = JamTayang;
 
 			DataTable kursiTerisi = new DataTable(); // buat kursi yg udh dibeli
-			sqlQuery = "select p.NOMOR_KURSI from PENJUALAN_TIKET p,JADWAL_TAYANG j where p.ID_JADWAL = j.ID_JADWAL and j.ID_STUDIO = '" + idStudio + "' and j.TANGGAL_TAYANG = '" + tgl + "' and j.ID_FILM = '" + idFilm + "';";
+			sqlQuery = "select p.NOMOR_KURSI from PENJUALAN_TIKET p,JADWAL_TAYANG j where p.ID_JADWAL = j.ID_JADWAL and j.ID_STUDIO = '" + idStudio + "' and j.TANGGAL_TAYANG = '" + tgl + "' and j.ID_FILM = '" + idFilm + "' and j.JAM_TAYANG = '" + JamTayang + "';";
 			sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
 			sqlAdapter = new MySqlDataAdapter(sqlCommand);
 			sqlAdapter.Fill(kursiTerisi);
