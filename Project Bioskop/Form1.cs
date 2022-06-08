@@ -143,5 +143,12 @@ namespace Project_Bioskop
             cbJamTayang.DisplayMember = "JAM_TAYANG";
             cbJamTayang.ValueMember = "ID_JADWAL";
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            FormKasirSnack formKasirSnack = new FormKasirSnack();
+            formKasirSnack.Show();
+        }
     }
 }

@@ -40,6 +40,7 @@ namespace Project_Bioskop
             this.labelJamTayang = new System.Windows.Forms.Label();
             this.labelFilm = new System.Windows.Forms.Label();
             this.labelTgl = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -143,11 +144,22 @@ namespace Project_Bioskop
             this.labelTgl.TabIndex = 10;
             this.labelTgl.Text = "Tanggal :";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(788, 601);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(112, 65);
+            this.button1.TabIndex = 20;
+            this.button1.Text = "Snack";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 692);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGoStudio);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbStudio);
@@ -180,6 +192,7 @@ namespace Project_Bioskop
         private System.Windows.Forms.Label labelJamTayang;
         private System.Windows.Forms.Label labelFilm;
         private System.Windows.Forms.Label labelTgl;
+        private System.Windows.Forms.Button button1;
     }
 }
 
