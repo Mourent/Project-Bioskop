@@ -21,6 +21,7 @@ namespace Project_Bioskop
         public string Film { get; set; }
         public string JamTayang { get; set; }
         public string IdJadwal { get; set; }
+        public string IdStaff { get; set; }
         public FormRegular()
         {
             InitializeComponent();
@@ -109,6 +110,7 @@ namespace Project_Bioskop
             formKonfirmasi.Harga = totalHarga.Rows[0][1].ToString();
             formKonfirmasi.BanyakKursi = hitungKursi.ToString();
             formKonfirmasi.IdJadwal = IdJadwal;
+            formKonfirmasi.IdStaff = IdStaff;
 
             formKonfirmasi.Show();
         }

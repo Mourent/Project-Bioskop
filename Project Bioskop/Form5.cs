@@ -19,6 +19,7 @@ namespace Project_Bioskop
 		public string Studio { get; set; }
 		public string Film { get; set; }
 		public string JamTayang { get; set; }
+		public string IdStaff { get; set; }
 		public FormImax()
         {
             InitializeComponent();
@@ -77,7 +78,9 @@ namespace Project_Bioskop
 
 		private void btnConfirm_Click(object sender, EventArgs e)
 		{
-
+			FormKonfirmasi formKonfirmasi = new FormKonfirmasi();
+			formKonfirmasi.IdStaff = IdStaff;
+			formKonfirmasi.Show();
 		}
 
 		private void btnA1_Click(object sender, EventArgs e)

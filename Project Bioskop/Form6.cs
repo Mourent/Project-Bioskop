@@ -22,6 +22,7 @@ namespace Project_Bioskop
         public string TotalHarga { get; set; }
         public string BanyakKursi { get; set; }
         public string IdJadwal { get; set; }
+        public string IdStaff { get; set; }
         public FormKonfirmasi()
         {
             InitializeComponent();
@@ -70,7 +71,7 @@ namespace Project_Bioskop
             }
             
             MessageBox.Show(count.ToString());
-            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat(IDT,'"+hitungID+"'), 'SF001', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
+            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat(IDT,'"+hitungID+"'), '"+IdStaff+"', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
             //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             //sqlAdapter = new MySqlDataAdapter(sqlCommand);
             //sqlAdapter.Fill(nota);
