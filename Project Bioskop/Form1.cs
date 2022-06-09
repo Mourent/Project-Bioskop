@@ -26,6 +26,7 @@ namespace Project_Bioskop
         public string sqlQuery;
         DataTable dtStudio = new DataTable();
         DataTable dtJamTayang = new DataTable();
+        DataTable dtStaff = new DataTable();
 
         private void btnGoStudio_Click(object sender, EventArgs e)
         {
@@ -107,7 +108,13 @@ namespace Project_Bioskop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL TIKET'; ";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(dtStaff);
+            cbStaffTiket.DataSource = dtStaff;
+            cbStaffTiket.DisplayMember = "NAMA_STAFF";
+            cbStaffTiket.ValueMember = "ID_STAFF";
 
         }
 
@@ -149,9 +156,29 @@ namespace Project_Bioskop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FormKasirSnack formKasirSnack = new FormKasirSnack();
-            formKasirSnack.Show();
+            //this.Hide();
+            //FormKasirSnack formKasirSnack = new FormKasirSnack();
+            //formKasirSnack.Show();
+        }
+
+        private void cbStaffTiket_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dtStaff = new DataTable();
+                sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL TIKET' and ID_STAFF = '" + cbStaffTiket.SelectedValue.ToString() + "';";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtStaff);
+
+                labelidstafftiket.Text = dtStaff.Rows[0][1].ToString();
+
+            }
+            catch (Exception ex)
+            {
+
+
+            }
         }
     }
 }

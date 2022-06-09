@@ -41,6 +41,9 @@ namespace Project_Bioskop
             this.labelFilm = new System.Windows.Forms.Label();
             this.labelTgl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbStaffTiket = new System.Windows.Forms.ComboBox();
+            this.labelidstafftiket = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,11 +157,42 @@ namespace Project_Bioskop
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(34, 646);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 20);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Staff: ";
+            // 
+            // cbStaffTiket
+            // 
+            this.cbStaffTiket.FormattingEnabled = true;
+            this.cbStaffTiket.Location = new System.Drawing.Point(92, 643);
+            this.cbStaffTiket.Name = "cbStaffTiket";
+            this.cbStaffTiket.Size = new System.Drawing.Size(194, 28);
+            this.cbStaffTiket.TabIndex = 22;
+            this.cbStaffTiket.SelectedIndexChanged += new System.EventHandler(this.cbStaffTiket_SelectedIndexChanged);
+            // 
+            // labelidstafftiket
+            // 
+            this.labelidstafftiket.AutoSize = true;
+            this.labelidstafftiket.ForeColor = System.Drawing.SystemColors.ActiveBorder;
+            this.labelidstafftiket.Location = new System.Drawing.Point(301, 646);
+            this.labelidstafftiket.Name = "labelidstafftiket";
+            this.labelidstafftiket.Size = new System.Drawing.Size(24, 20);
+            this.labelidstafftiket.TabIndex = 23;
+            this.labelidstafftiket.Text = "---";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 692);
+            this.Controls.Add(this.labelidstafftiket);
+            this.Controls.Add(this.cbStaffTiket);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGoStudio);
             this.Controls.Add(this.pictureBox1);
@@ -193,6 +227,9 @@ namespace Project_Bioskop
         private System.Windows.Forms.Label labelFilm;
         private System.Windows.Forms.Label labelTgl;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cbStaffTiket;
+        private System.Windows.Forms.Label labelidstafftiket;
     }
 }
 
