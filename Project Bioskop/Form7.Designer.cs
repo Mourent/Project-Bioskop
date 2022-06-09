@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.labelidstaff = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBoxStaff = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
@@ -47,11 +47,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbMenu = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonFinish = new System.Windows.Forms.Button();
             this.labelchange = new System.Windows.Forms.Label();
             this.textBoxcash = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.buttonPay = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelpay = new System.Windows.Forms.Label();
@@ -60,7 +60,7 @@
             this.button5 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerSnack = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bykbrg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).BeginInit();
@@ -76,14 +76,14 @@
             this.labelidstaff.TabIndex = 62;
             this.labelidstaff.Text = "---";
             // 
-            // comboBox2
+            // comboBoxStaff
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(102, 16);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(191, 28);
-            this.comboBox2.TabIndex = 61;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.comboBoxStaff.FormattingEnabled = true;
+            this.comboBoxStaff.Location = new System.Drawing.Point(102, 16);
+            this.comboBoxStaff.Name = "comboBoxStaff";
+            this.comboBoxStaff.Size = new System.Drawing.Size(191, 28);
+            this.comboBoxStaff.TabIndex = 61;
+            this.comboBoxStaff.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // button3
             // 
@@ -238,14 +238,15 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Menu: ";
             // 
-            // button6
+            // buttonFinish
             // 
-            this.button6.Location = new System.Drawing.Point(1155, 734);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(110, 52);
-            this.button6.TabIndex = 72;
-            this.button6.Text = "Finish ";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonFinish.Location = new System.Drawing.Point(1155, 734);
+            this.buttonFinish.Name = "buttonFinish";
+            this.buttonFinish.Size = new System.Drawing.Size(110, 52);
+            this.buttonFinish.TabIndex = 72;
+            this.buttonFinish.Text = "Finish ";
+            this.buttonFinish.UseVisualStyleBackColor = true;
+            this.buttonFinish.Click += new System.EventHandler(this.button6_Click);
             // 
             // labelchange
             // 
@@ -272,15 +273,15 @@
             this.label10.TabIndex = 69;
             this.label10.Text = "Amount:";
             // 
-            // button4
+            // buttonPay
             // 
-            this.button4.Location = new System.Drawing.Point(1110, 516);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 66);
-            this.button4.TabIndex = 68;
-            this.button4.Text = "Pay";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.buttonPay.Location = new System.Drawing.Point(1110, 516);
+            this.buttonPay.Name = "buttonPay";
+            this.buttonPay.Size = new System.Drawing.Size(114, 66);
+            this.buttonPay.TabIndex = 68;
+            this.buttonPay.Text = "Pay";
+            this.buttonPay.UseVisualStyleBackColor = true;
+            this.buttonPay.Click += new System.EventHandler(this.button4_Click);
             // 
             // label7
             // 
@@ -352,16 +353,16 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(578, 678);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 32);
+            this.label3.Size = new System.Drawing.Size(42, 32);
             this.label3.TabIndex = 73;
             this.label3.Text = "---";
             // 
-            // dateTimePicker1
+            // dateTimePickerSnack
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(967, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(323, 26);
-            this.dateTimePicker1.TabIndex = 76;
+            this.dateTimePickerSnack.Location = new System.Drawing.Point(967, 22);
+            this.dateTimePickerSnack.Name = "dateTimePickerSnack";
+            this.dateTimePickerSnack.Size = new System.Drawing.Size(323, 26);
+            this.dateTimePickerSnack.TabIndex = 76;
             // 
             // label11
             // 
@@ -379,22 +380,22 @@
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1317, 825);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dateTimePickerSnack);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.buttonFinish);
             this.Controls.Add(this.labelchange);
             this.Controls.Add(this.textBoxcash);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.buttonPay);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelpay);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.labelidstaff);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBoxStaff);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.button2);
@@ -422,7 +423,7 @@
         #endregion
 
         private System.Windows.Forms.Label labelidstaff;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxStaff;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button button2;
@@ -440,11 +441,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.ComboBox cbMenu;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonFinish;
         private System.Windows.Forms.Label labelchange;
         private System.Windows.Forms.TextBox textBoxcash;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button buttonPay;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelpay;
@@ -453,7 +454,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerSnack;
         private System.Windows.Forms.Label label11;
     }
 }

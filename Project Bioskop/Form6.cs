@@ -22,7 +22,6 @@ namespace Project_Bioskop
         public string TotalHarga { get; set; }
         public string BanyakKursi { get; set; }
         public string IdJadwal { get; set; }
-
         public FormKonfirmasi()
         {
             InitializeComponent();

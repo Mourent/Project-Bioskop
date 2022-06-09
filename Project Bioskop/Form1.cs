@@ -55,8 +55,6 @@ namespace Project_Bioskop
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtStudioRegular);
 
-
-
             if (dtStudioPremiere.Rows.Count > 0)
             {
                 FormThePremiere formPremiere = new FormThePremiere();

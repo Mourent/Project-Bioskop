@@ -43,9 +43,9 @@ namespace Project_Bioskop
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtPegawai);
-            comboBox2.DataSource = dtPegawai;
-            comboBox2.DisplayMember = "NAMA_STAFF";
-            comboBox2.ValueMember = "ID_STAFF";
+            comboBoxStaff.DataSource = dtPegawai;
+            comboBoxStaff.DisplayMember = "NAMA_STAFF";
+            comboBoxStaff.ValueMember = "ID_STAFF";
 
         }
 
@@ -135,7 +135,7 @@ namespace Project_Bioskop
             try
             {
                 DataTable dtPegawaiii = new DataTable();
-                sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL SNACK' and ID_STAFF = '" + comboBox2.SelectedValue.ToString() + "';";
+                sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL SNACK' and ID_STAFF = '" + comboBoxStaff.SelectedValue.ToString() + "';";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawaiii);
@@ -182,6 +182,13 @@ namespace Project_Bioskop
                 labelchange.Text = "0";
             }
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            //sqlQuery = "insert into PENJUALAN_SNACK values('idjualsnck', '"+comboBoxStaff.SelectedValue.ToString()+"', '"+dateTimePickerSnack.Value.ToString("yyyy-MM-dd") + "', 'jmlitem','total','0');";
+          
+            MessageBox.Show(sqlQuery);
         }
     }
 }
