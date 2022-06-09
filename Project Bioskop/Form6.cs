@@ -18,6 +18,10 @@ namespace Project_Bioskop
         public string Film { get; set; }
         public string JamTayang { get; set; }
         public string Kursi { get; set; }
+        public string Harga { get; set; }
+        public string TotalHarga { get; set; }
+        public string BanyakKursi { get; set; }
+        public string IdJadwal { get; set; }
 
         public FormKonfirmasi()
         {
@@ -38,6 +42,40 @@ namespace Project_Bioskop
             labelOutputJam.Text = JamTayang;
             labelOutputBioskop.Text = Studio;
             labelOutputKursi.Text = Kursi;
+            labelOutputTotal.Text = TotalHarga;
+            labelOutputHarga.Text = Harga;
+            labelOutputBanyakKursi.Text = BanyakKursi;
+        }
+
+        private void buttonBuy_Click(object sender, EventArgs e)
+        {
+            DataTable nota = new DataTable();
+            DataTable idTiket = new DataTable();
+            sqlQuery = "select ID_JUAL_TIKET from PENJUALAN_TIKET";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(idTiket);
+            int count = idTiket.Rows.Count;
+            count++;
+            string hitungID = "";
+            if(count.ToString().Length == 1)
+            {
+                hitungID = "00" + count.ToString();
+            }else if(count.ToString().Length == 2)
+            {
+                hitungID = "0" + count.ToString();
+            }
+            else
+            {
+                hitungID = count.ToString();
+            }
+            
+            MessageBox.Show(count.ToString());
+            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat(IDT,'"+hitungID+"'), 'SF001', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
+            //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            //sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            //sqlAdapter.Fill(nota);
+            MessageBox.Show(sqlQuery);
         }
     }
 }

@@ -54,6 +54,8 @@ namespace Project_Bioskop
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(dtStudioRegular);
 
+
+
             if (dtStudioPremiere.Rows.Count > 0)
             {
                 FormThePremiere formPremiere = new FormThePremiere();
@@ -96,10 +98,11 @@ namespace Project_Bioskop
                 formRegular.Film = cbFilm.Text;
                 formRegular.Studio = cbStudio.Text;
                 formRegular.JamTayang = cbJamTayang.Text;
+                formRegular.IdJadwal = cbJamTayang.SelectedValue.ToString();
                 formRegular.Show();
             }
 
-            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
