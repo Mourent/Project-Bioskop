@@ -67,7 +67,6 @@ namespace Project_Bioskop
                         button.BackColor = Color.Red;
                     }
                 }
-
             }
         }
 

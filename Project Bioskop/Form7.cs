@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -37,7 +31,6 @@ namespace Project_Bioskop
             cbMenu.DisplayMember = "NAMA_SNACK";
             cbMenu.ValueMember = "ID_SNACK";
 
-
             sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL SNACK'; ";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
@@ -45,7 +38,6 @@ namespace Project_Bioskop
             comboBoxStaff.DataSource = dtPegawai;
             comboBoxStaff.DisplayMember = "NAMA_STAFF";
             comboBoxStaff.ValueMember = "ID_STAFF";
-
         }
 
         private void cbMenu_SelectedIndexChanged(object sender, EventArgs e)
@@ -57,7 +49,6 @@ namespace Project_Bioskop
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(snack);
-
                 labelIDSnack.Text = snack.Rows[0][1].ToString();
 
                 DataTable harga = new DataTable();
@@ -65,11 +56,7 @@ namespace Project_Bioskop
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(harga);
-
                 piro.Text = harga.Rows[0][2].ToString();
-
-
-
             }
             catch (Exception ex)
             {
@@ -87,10 +74,7 @@ namespace Project_Bioskop
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(hargas);
             int count = Convert.ToInt32(Math.Round(bykbrg.Value, 0));
-
             var baru = count * Convert.ToInt32(piro.Text);
-            //label5.Text = baru.ToString();
-
         }
         int plus = 0;
         private void button1_Click(object sender, EventArgs e)
@@ -100,16 +84,13 @@ namespace Project_Bioskop
             var makandipilih = cbMenu.SelectedValue.ToString();
             var qtyne = bykbrg.Value.ToString();
             var tothargae = sum * Convert.ToInt32(piro.Text);
-
             dgvMenu.Rows.Add(makandipilih, qtyne, tothargae);
 
-            
             for (int i = 0; i < dgvMenu.Rows.Count-1; i++)
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
             }
             labelTotalHarga.Text = plus.ToString();
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -137,29 +118,24 @@ namespace Project_Bioskop
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtPegawaiii);
-
                 labelidstaff.Text = dtPegawaiii.Rows[0][1].ToString();
-
             }
             catch (Exception ex)
             {
 
 
             }
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             dgvMenu.Rows.Clear();
-
             int plus = 0;
             for (int i = 0; i < dgvMenu.Rows.Count; i++)
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
             }
             labelTotalHarga.Text = plus.ToString();
-
         }
         DataTable Penjualan = new DataTable();
         private void button4_Click(object sender, EventArgs e)
@@ -178,7 +154,6 @@ namespace Project_Bioskop
                 }
                 Penjualan.Rows.Add(dRow);
             }
-
             if (comboBoxPembayaran.SelectedIndex == 0)
             {
                 int value = Convert.ToInt32(textBoxcash.Text);
@@ -194,7 +169,6 @@ namespace Project_Bioskop
                 textBoxcash.Text = labelTotalHarga.Text;
                 labelchange.Text = "0";
             }
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -234,7 +208,7 @@ namespace Project_Bioskop
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            MessageBox.Show("Data Masuk");
+            MessageBox.Show("Data Tersimpan");
 
             this.Hide();
             FormStrukSnack formStrukSnack = new FormStrukSnack();
@@ -244,7 +218,6 @@ namespace Project_Bioskop
             formStrukSnack.Pesanan = Penjualan;
             formStrukSnack.TotalHarga = labelTotalHarga.Text;
             formStrukSnack.Show();
-
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
