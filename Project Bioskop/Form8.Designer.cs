@@ -34,7 +34,8 @@
             // 
             // btnpilihtiket
             // 
-            this.btnpilihtiket.Location = new System.Drawing.Point(195, 181);
+            this.btnpilihtiket.Font = new System.Drawing.Font("Mongolian Baiti", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpilihtiket.Location = new System.Drawing.Point(199, 182);
             this.btnpilihtiket.Name = "btnpilihtiket";
             this.btnpilihtiket.Size = new System.Drawing.Size(126, 76);
             this.btnpilihtiket.TabIndex = 0;
@@ -44,7 +45,8 @@
             // 
             // btnpilihsnack
             // 
-            this.btnpilihsnack.Location = new System.Drawing.Point(463, 181);
+            this.btnpilihsnack.Font = new System.Drawing.Font("Mongolian Baiti", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpilihsnack.Location = new System.Drawing.Point(476, 181);
             this.btnpilihsnack.Name = "btnpilihsnack";
             this.btnpilihsnack.Size = new System.Drawing.Size(128, 77);
             this.btnpilihsnack.TabIndex = 1;

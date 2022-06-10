@@ -77,6 +77,10 @@ namespace Project_Bioskop
             this.Hide();
             Form1 form1 = new Form1();
             form1.Show();
+
+            FormTiket formTiket = new FormTiket();
+            formTiket.Show();
+
         }
     }
 }

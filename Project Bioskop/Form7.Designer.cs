@@ -55,9 +55,9 @@
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.labelpay = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbNamaCust = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dateTimePickerSnack = new System.Windows.Forms.DateTimePicker();
@@ -87,6 +87,7 @@
             // 
             // button3
             // 
+            this.button3.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Location = new System.Drawing.Point(993, 349);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(114, 68);
@@ -106,6 +107,7 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Mongolian Baiti", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(870, 350);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 66);
@@ -116,6 +118,7 @@
             // 
             // button1
             // 
+            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(748, 348);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(114, 68);
@@ -127,9 +130,10 @@
             // piro
             // 
             this.piro.AutoSize = true;
+            this.piro.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.piro.Location = new System.Drawing.Point(878, 288);
             this.piro.Name = "piro";
-            this.piro.Size = new System.Drawing.Size(24, 20);
+            this.piro.Size = new System.Drawing.Size(31, 21);
             this.piro.TabIndex = 56;
             this.piro.Text = "---";
             // 
@@ -170,9 +174,10 @@
             // labelIDSnack
             // 
             this.labelIDSnack.AutoSize = true;
+            this.labelIDSnack.Font = new System.Drawing.Font("Mongolian Baiti", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIDSnack.Location = new System.Drawing.Point(878, 180);
             this.labelIDSnack.Name = "labelIDSnack";
-            this.labelIDSnack.Size = new System.Drawing.Size(24, 20);
+            this.labelIDSnack.Size = new System.Drawing.Size(31, 21);
             this.labelIDSnack.TabIndex = 51;
             this.labelIDSnack.Text = "---";
             // 
@@ -240,6 +245,7 @@
             // 
             // buttonFinish
             // 
+            this.buttonFinish.Font = new System.Drawing.Font("Mongolian Baiti", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFinish.Location = new System.Drawing.Point(1155, 734);
             this.buttonFinish.Name = "buttonFinish";
             this.buttonFinish.Size = new System.Drawing.Size(110, 52);
@@ -275,6 +281,7 @@
             // 
             // buttonPay
             // 
+            this.buttonPay.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonPay.Location = new System.Drawing.Point(1110, 516);
             this.buttonPay.Name = "buttonPay";
             this.buttonPay.Size = new System.Drawing.Size(114, 66);
@@ -312,12 +319,12 @@
             this.labelpay.TabIndex = 65;
             this.labelpay.Text = "Paid By:";
             // 
-            // textBox2
+            // tbNamaCust
             // 
-            this.textBox2.Location = new System.Drawing.Point(873, 459);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(293, 26);
-            this.textBox2.TabIndex = 64;
+            this.tbNamaCust.Location = new System.Drawing.Point(873, 459);
+            this.tbNamaCust.Name = "tbNamaCust";
+            this.tbNamaCust.Size = new System.Drawing.Size(293, 26);
+            this.tbNamaCust.TabIndex = 64;
             // 
             // label12
             // 
@@ -328,14 +335,16 @@
             this.label12.TabIndex = 63;
             this.label12.Text = "Customer Name:";
             // 
-            // button5
+            // buttonBack
             // 
-            this.button5.Location = new System.Drawing.Point(30, 761);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(110, 52);
-            this.button5.TabIndex = 75;
-            this.button5.Text = "Back";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonBack.Font = new System.Drawing.Font("Mongolian Baiti", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBack.Location = new System.Drawing.Point(30, 761);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(110, 52);
+            this.buttonBack.TabIndex = 75;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // label9
             // 
@@ -350,10 +359,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(578, 678);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 32);
+            this.label3.Size = new System.Drawing.Size(40, 30);
             this.label3.TabIndex = 73;
             this.label3.Text = "---";
             // 
@@ -381,7 +390,7 @@
             this.ClientSize = new System.Drawing.Size(1317, 825);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dateTimePickerSnack);
-            this.Controls.Add(this.button5);
+            this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.buttonFinish);
@@ -392,7 +401,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.labelpay);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbNamaCust);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.labelidstaff);
             this.Controls.Add(this.comboBoxStaff);
@@ -449,12 +458,12 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label labelpay;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dateTimePickerSnack;
         private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox tbNamaCust;
     }
 }

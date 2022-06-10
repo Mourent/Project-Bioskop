@@ -225,9 +225,17 @@ namespace Project_Bioskop
             sqlConnect.Close();
             MessageBox.Show("Data Masuk");
 
+            this.Hide();
+            FormStrukSnack formStrukSnack = new FormStrukSnack();
+            formStrukSnack.Show();
 
+        }
 
-
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }
