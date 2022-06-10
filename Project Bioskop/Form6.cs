@@ -49,13 +49,12 @@ namespace Project_Bioskop
 
         private void buttonBuy_Click(object sender, EventArgs e)
         {
-            DataTable nota = new DataTable();
-            DataTable idTiket = new DataTable();
+            DataTable idJualTiket = new DataTable();
             sqlQuery = "select ID_JUAL_TIKET from PENJUALAN_TIKET";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(idTiket);
-            int count = idTiket.Rows.Count;
+            sqlAdapter.Fill(idJualTiket);
+            int count = idJualTiket.Rows.Count;
             count++;
             string hitungID = "";
             if(count.ToString().Length == 1)
@@ -69,13 +68,15 @@ namespace Project_Bioskop
             {
                 hitungID = count.ToString();
             }
-            
-            MessageBox.Show(count.ToString());
-            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat(IDT,'"+hitungID+"'), '"+IdStaff+"', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
-            //sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            //sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            //sqlAdapter.Fill(nota);
-            MessageBox.Show(sqlQuery);
+            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat('IDT','"+hitungID+"'), '"+IdStaff+"', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
+            sqlConnect.Open();
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnect.Close();
+            MessageBox.Show("Data Masuk");
+            this.Hide();
+            Form1 form1 = new Form1();
+            form1.Show();
         }
     }
 }

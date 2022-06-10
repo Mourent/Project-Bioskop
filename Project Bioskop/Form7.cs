@@ -93,7 +93,7 @@ namespace Project_Bioskop
             //label5.Text = baru.ToString();
 
         }
-
+        int plus = 0;
         private void button1_Click(object sender, EventArgs e)
         {
             int sum = Convert.ToInt32(Math.Round(bykbrg.Value, 0));
@@ -105,7 +105,7 @@ namespace Project_Bioskop
 
             dgvMenu.Rows.Add(makandipilih, qtyne, tothargae);
 
-            int plus = 0;
+            
             for (int i = 0; i < dgvMenu.Rows.Count; i++)
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
@@ -186,9 +186,48 @@ namespace Project_Bioskop
 
         private void button6_Click(object sender, EventArgs e)
         {
-            //sqlQuery = "insert into PENJUALAN_SNACK values('idjualsnck', '"+comboBoxStaff.SelectedValue.ToString()+"', '"+dateTimePickerSnack.Value.ToString("yyyy-MM-dd") + "', 'jmlitem','total','0');";
-          
-            MessageBox.Show(sqlQuery);
+            DataTable idJualSnack = new DataTable();
+            sqlQuery = "select ID_JUAL_SNACK from PENJUALAN_SNACK";
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlAdapter = new MySqlDataAdapter(sqlCommand);
+            sqlAdapter.Fill(idJualSnack);
+            int count = idJualSnack.Rows.Count;
+            string idAkhir = idJualSnack.Rows[count - 1][0].ToString();
+            //double pisah = Math.Round(Convert.ToDouble(idAkhir.Substring(2)));
+            count++;
+            string hitungID = "";
+            if (count.ToString().Length == 1)
+            {
+                hitungID = "00" + count.ToString();
+            }
+            else if (count.ToString().Length == 2)
+            {
+                hitungID = "0" + count.ToString();
+            }
+            else
+            {
+                hitungID = count.ToString();
+            }
+            int totalQty = 0;
+            for (int i = 0; i < dgvMenu.Rows.Count-1; i++)
+            {
+                totalQty += Convert.ToInt32(dgvMenu.Rows[i].Cells[1].Value);
+                sqlQuery = "insert into PENJUALAN_SNACK2 values(concat('JS','" + hitungID + "'),'" + dgvMenu.Rows[i].Cells[0].Value.ToString() + "','" + dgvMenu.Rows[i].Cells[1].Value.ToString() + "');";
+                sqlConnect.Open();
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlCommand.ExecuteNonQuery();
+                sqlConnect.Close();
+            }
+            sqlQuery = "insert into PENJUALAN_SNACK values(concat('JS','" + hitungID + "'), '" + comboBoxStaff.SelectedValue.ToString() + "', '" + dateTimePickerSnack.Value.ToString("yyyy-MM-dd") + "', '" + totalQty.ToString() + "','" + plus.ToString() + "','0');";
+            sqlConnect.Open();
+            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+            sqlCommand.ExecuteNonQuery();
+            sqlConnect.Close();
+            MessageBox.Show("Data Masuk");
+
+
+
+
         }
     }
 }

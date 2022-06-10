@@ -64,7 +64,8 @@ namespace Project_Bioskop
                 formPremiere.Film = cbFilm.Text;
                 formPremiere.Studio = cbStudio.Text;
                 formPremiere.JamTayang = cbJamTayang.Text;
-                formPremiere.IdStaff = labelidstafftiket.Text;
+                formPremiere.IdJadwal = cbJamTayang.SelectedValue.ToString();
+                formPremiere.IdStaff = cbStaffTiket.SelectedValue.ToString();
                 formPremiere.Show();
             }
             else if (dtStudioImax.Rows.Count > 0)
@@ -76,7 +77,8 @@ namespace Project_Bioskop
                 formImax.Film = cbFilm.Text;
                 formImax.Studio = cbStudio.Text;
                 formImax.JamTayang = cbJamTayang.Text;
-                formImax.IdStaff = labelidstafftiket.Text;
+                formImax.IdJadwal = cbJamTayang.SelectedValue.ToString();
+                formImax.IdStaff = cbStaffTiket.SelectedValue.ToString();
                 formImax.Show();
             }
             else if(dtStudioDolby.Rows.Count > 0)
@@ -88,7 +90,8 @@ namespace Project_Bioskop
                 formDolby.Film = cbFilm.Text;
                 formDolby.Studio = cbStudio.Text;
                 formDolby.JamTayang = cbJamTayang.Text;
-                formDolby.IdStaff = labelidstafftiket.Text;
+                formDolby.IdJadwal = cbJamTayang.SelectedValue.ToString();
+                formDolby.IdStaff = cbStaffTiket.SelectedValue.ToString();
                 formDolby.Show();
             }
             else if(dtStudioRegular.Rows.Count > 0)
@@ -101,7 +104,7 @@ namespace Project_Bioskop
                 formRegular.Studio = cbStudio.Text;
                 formRegular.JamTayang = cbJamTayang.Text;
                 formRegular.IdJadwal = cbJamTayang.SelectedValue.ToString();
-                formRegular.IdStaff = labelidstafftiket.Text;
+                formRegular.IdStaff = cbStaffTiket.SelectedValue.ToString();
                 formRegular.Show();
             }
 
@@ -172,9 +175,6 @@ namespace Project_Bioskop
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                 sqlAdapter = new MySqlDataAdapter(sqlCommand);
                 sqlAdapter.Fill(dtStaff);
-                cbStaffTiket.DataSource = dtStaff;
-                cbStaffTiket.DisplayMember = "NAMA_STAFF";
-                cbStaffTiket.ValueMember = "ID_STAFF";
                 labelidstafftiket.Text = dtStaff.Rows[0][1].ToString();
             }
             catch (Exception ex)

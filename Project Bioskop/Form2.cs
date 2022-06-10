@@ -83,8 +83,6 @@ namespace Project_Bioskop
             string kursi = "";
             int hitungKursi = 0;
             this.Hide();
-           
-           
             foreach (var button in this.Controls.OfType<Button>())
             {
                 if (button.BackColor == Color.Yellow)
