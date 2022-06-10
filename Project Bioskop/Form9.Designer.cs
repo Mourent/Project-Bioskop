@@ -37,9 +37,6 @@
             this.labelkasir = new System.Windows.Forms.Label();
             this.lblCashier = new System.Windows.Forms.Label();
             this.dgvMenu1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.labeltot = new System.Windows.Forms.Label();
             this.labelTotal = new System.Windows.Forms.Label();
             this.labelty = new System.Windows.Forms.Label();
@@ -116,38 +113,16 @@
             // 
             // dgvMenu1
             // 
+            this.dgvMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvMenu1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenu1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
             this.dgvMenu1.Location = new System.Drawing.Point(24, 371);
             this.dgvMenu1.Name = "dgvMenu1";
             this.dgvMenu1.RowHeadersWidth = 62;
             this.dgvMenu1.RowTemplate.Height = 28;
             this.dgvMenu1.Size = new System.Drawing.Size(532, 301);
             this.dgvMenu1.TabIndex = 50;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nama Snack";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Qty";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Harga";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
             // 
             // labeltot
             // 
@@ -164,7 +139,7 @@
             this.labelTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTotal.Location = new System.Drawing.Point(455, 690);
             this.labelTotal.Name = "labelTotal";
-            this.labelTotal.Size = new System.Drawing.Size(41, 32);
+            this.labelTotal.Size = new System.Drawing.Size(42, 32);
             this.labelTotal.TabIndex = 74;
             this.labelTotal.Text = "---";
             // 
@@ -214,9 +189,6 @@
         private System.Windows.Forms.Label labelkasir;
         private System.Windows.Forms.Label lblCashier;
         private System.Windows.Forms.DataGridView dgvMenu1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.Label labeltot;
         private System.Windows.Forms.Label labelTotal;
         private System.Windows.Forms.Label labelty;

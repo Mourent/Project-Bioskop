@@ -26,7 +26,6 @@ namespace Project_Bioskop
         public string sqlQuery;
         DataTable dtMenu = new DataTable(); // BUAT MENU
         DataTable dtPegawai = new DataTable();
-        int Posisi = 0;
 
         private void FormKasirSnack_Load(object sender, EventArgs e)
         {
@@ -74,7 +73,7 @@ namespace Project_Bioskop
             }
             catch (Exception ex)
             {
-
+               
 
             }
 
@@ -96,9 +95,8 @@ namespace Project_Bioskop
         int plus = 0;
         private void button1_Click(object sender, EventArgs e)
         {
+            plus = 0;
             int sum = Convert.ToInt32(Math.Round(bykbrg.Value, 0));
-
-
             var makandipilih = cbMenu.SelectedValue.ToString();
             var qtyne = bykbrg.Value.ToString();
             var tothargae = sum * Convert.ToInt32(piro.Text);
@@ -106,11 +104,11 @@ namespace Project_Bioskop
             dgvMenu.Rows.Add(makandipilih, qtyne, tothargae);
 
             
-            for (int i = 0; i < dgvMenu.Rows.Count; i++)
+            for (int i = 0; i < dgvMenu.Rows.Count-1; i++)
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
             }
-            label3.Text = plus.ToString();
+            labelTotalHarga.Text = plus.ToString();
 
         }
 
@@ -126,7 +124,7 @@ namespace Project_Bioskop
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
             }
-            label3.Text = plus.ToString();
+            labelTotalHarga.Text = plus.ToString();
 
         }
 
@@ -160,25 +158,40 @@ namespace Project_Bioskop
             {
                 plus += Convert.ToInt32(dgvMenu.Rows[i].Cells[2].Value);
             }
-            label3.Text = plus.ToString();
+            labelTotalHarga.Text = plus.ToString();
 
         }
-
+        DataTable Penjualan = new DataTable();
         private void button4_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedIndex == 0)
+            Penjualan = new DataTable();
+            foreach (DataGridViewColumn col in dgvMenu.Columns)
+            {
+                Penjualan.Columns.Add(col.HeaderText);
+            }
+            foreach (DataGridViewRow row in dgvMenu.Rows)
+            {
+                DataRow dRow = Penjualan.NewRow();
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                    dRow[cell.ColumnIndex] = cell.Value;
+                }
+                Penjualan.Rows.Add(dRow);
+            }
+
+            if (comboBoxPembayaran.SelectedIndex == 0)
             {
                 int value = Convert.ToInt32(textBoxcash.Text);
-                int totalvalue = Convert.ToInt32(label3.Text);
+                int totalvalue = Convert.ToInt32(labelTotalHarga.Text);
                 int titip;
 
                 titip = value - totalvalue;
                 labelchange.Text = titip.ToString();
             }
-            else if (comboBox1.SelectedIndex == 1)
+            else if (comboBoxPembayaran.SelectedIndex == 1)
             {
                 textBoxcash.Enabled = false;
-                textBoxcash.Text = label3.Text;
+                textBoxcash.Text = labelTotalHarga.Text;
                 labelchange.Text = "0";
             }
 
@@ -192,8 +205,6 @@ namespace Project_Bioskop
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(idJualSnack);
             int count = idJualSnack.Rows.Count;
-            string idAkhir = idJualSnack.Rows[count - 1][0].ToString();
-            //double pisah = Math.Round(Convert.ToDouble(idAkhir.Substring(2)));
             count++;
             string hitungID = "";
             if (count.ToString().Length == 1)
@@ -227,6 +238,11 @@ namespace Project_Bioskop
 
             this.Hide();
             FormStrukSnack formStrukSnack = new FormStrukSnack();
+            formStrukSnack.NamaCust = tbNamaCust.Text;
+            formStrukSnack.NoPesanan = "JS" + hitungID;
+            formStrukSnack.NamaStaff = comboBoxStaff.SelectedValue.ToString();
+            formStrukSnack.Pesanan = Penjualan;
+            formStrukSnack.TotalHarga = labelTotalHarga.Text;
             formStrukSnack.Show();
 
         }

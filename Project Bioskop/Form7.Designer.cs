@@ -30,10 +30,10 @@
         {
             this.labelidstaff = new System.Windows.Forms.Label();
             this.comboBoxStaff = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
+            this.buttonReset = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.piro = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.bykbrg = new System.Windows.Forms.NumericUpDown();
@@ -53,13 +53,13 @@
             this.label10 = new System.Windows.Forms.Label();
             this.buttonPay = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxPembayaran = new System.Windows.Forms.ComboBox();
             this.labelpay = new System.Windows.Forms.Label();
             this.tbNamaCust = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.buttonBack = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.labelTotalHarga = new System.Windows.Forms.Label();
             this.dateTimePickerSnack = new System.Windows.Forms.DateTimePicker();
             this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.bykbrg)).BeginInit();
@@ -85,16 +85,16 @@
             this.comboBoxStaff.TabIndex = 61;
             this.comboBoxStaff.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // button3
+            // buttonReset
             // 
-            this.button3.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(993, 349);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(114, 68);
-            this.button3.TabIndex = 60;
-            this.button3.Text = "Reset Order";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.buttonReset.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReset.Location = new System.Drawing.Point(993, 349);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(114, 68);
+            this.buttonReset.TabIndex = 60;
+            this.buttonReset.Text = "Reset Order";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.button3_Click);
             // 
             // label8
             // 
@@ -105,27 +105,27 @@
             this.label8.TabIndex = 59;
             this.label8.Text = "Staff: ";
             // 
-            // button2
+            // buttonDelete
             // 
-            this.button2.Font = new System.Drawing.Font("Mongolian Baiti", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(870, 350);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 66);
-            this.button2.TabIndex = 58;
-            this.button2.Text = "Delete Item";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDelete.Font = new System.Drawing.Font("Mongolian Baiti", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDelete.Location = new System.Drawing.Point(870, 350);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(114, 66);
+            this.buttonDelete.TabIndex = 58;
+            this.buttonDelete.Text = "Delete Item";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(748, 348);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 68);
-            this.button1.TabIndex = 57;
-            this.button1.Text = "Add Item";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAdd.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Location = new System.Drawing.Point(748, 348);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(114, 68);
+            this.buttonAdd.TabIndex = 57;
+            this.buttonAdd.Text = "Add Item";
+            this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // piro
             // 
@@ -299,16 +299,16 @@
             this.label7.TabIndex = 67;
             this.label7.Text = "Change:";
             // 
-            // comboBox1
+            // comboBoxPembayaran
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBoxPembayaran.FormattingEnabled = true;
+            this.comboBoxPembayaran.Items.AddRange(new object[] {
             "Cash",
             "Card"});
-            this.comboBox1.Location = new System.Drawing.Point(830, 511);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(237, 28);
-            this.comboBox1.TabIndex = 66;
+            this.comboBoxPembayaran.Location = new System.Drawing.Point(830, 511);
+            this.comboBoxPembayaran.Name = "comboBoxPembayaran";
+            this.comboBoxPembayaran.Size = new System.Drawing.Size(237, 28);
+            this.comboBoxPembayaran.TabIndex = 66;
             // 
             // labelpay
             // 
@@ -356,15 +356,15 @@
             this.label9.TabIndex = 74;
             this.label9.Text = "Total: ";
             // 
-            // label3
+            // labelTotalHarga
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(578, 678);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 30);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "---";
+            this.labelTotalHarga.AutoSize = true;
+            this.labelTotalHarga.Font = new System.Drawing.Font("Mongolian Baiti", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTotalHarga.Location = new System.Drawing.Point(578, 678);
+            this.labelTotalHarga.Name = "labelTotalHarga";
+            this.labelTotalHarga.Size = new System.Drawing.Size(40, 30);
+            this.labelTotalHarga.TabIndex = 73;
+            this.labelTotalHarga.Text = "---";
             // 
             // dateTimePickerSnack
             // 
@@ -392,23 +392,23 @@
             this.Controls.Add(this.dateTimePickerSnack);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelTotalHarga);
             this.Controls.Add(this.buttonFinish);
             this.Controls.Add(this.labelchange);
             this.Controls.Add(this.textBoxcash);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.buttonPay);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxPembayaran);
             this.Controls.Add(this.labelpay);
             this.Controls.Add(this.tbNamaCust);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.labelidstaff);
             this.Controls.Add(this.comboBoxStaff);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.buttonReset);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.piro);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.bykbrg);
@@ -433,10 +433,10 @@
 
         private System.Windows.Forms.Label labelidstaff;
         private System.Windows.Forms.ComboBox comboBoxStaff;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button buttonReset;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Label piro;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown bykbrg;
@@ -456,12 +456,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button buttonPay;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxPembayaran;
         private System.Windows.Forms.Label labelpay;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button buttonBack;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelTotalHarga;
         private System.Windows.Forms.DateTimePicker dateTimePickerSnack;
         private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox tbNamaCust;
