@@ -217,7 +217,13 @@ namespace Project_Bioskop
             formStrukSnack.NamaStaff = comboBoxStaff.SelectedValue.ToString();
             formStrukSnack.Pesanan = Penjualan;
             formStrukSnack.TotalHarga = labelTotalHarga.Text;
+
+            formStrukSnack.Text = comboBoxStaff.Text;
+
             formStrukSnack.Show();
+
+            
+
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

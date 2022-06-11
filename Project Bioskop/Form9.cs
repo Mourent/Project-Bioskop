@@ -16,12 +16,18 @@ namespace Project_Bioskop
             InitializeComponent();
             
         }
+        private string text;
+        public string Text
+        {
+            get { return NamaStaff; }
+            set { NamaStaff = value; }
+        }
 
         private void FormStrukSnack_Load(object sender, EventArgs e)
         {
             lblnamacust.Text = NamaCust;
             lblIdNoPesanan.Text = NoPesanan;
-            lblCashier.Text = NamaStaff.ToString();
+            lblCashier.Text = Text;
             dgvMenu1.DataSource = Pesanan;
             labelTotal.Text = TotalHarga;
         }
