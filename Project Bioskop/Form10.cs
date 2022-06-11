@@ -12,6 +12,11 @@ namespace Project_Bioskop
 {
     public partial class FormTiket : Form
     {
+        public string Studio { get; set; }
+        public string Tgl { get; set; }
+        public string Kursi { get; set; }
+        public string Film { get; set; }
+
         public FormTiket()
         {
             InitializeComponent();
@@ -29,7 +34,10 @@ namespace Project_Bioskop
 
         private void Form10_Load(object sender, EventArgs e)
         {
-            
+            labelTheater.Text = Studio;
+            lblTanggalMain.Text = Tgl;
+            lblSeat.Text = Kursi;
+            lblJudulFilm.Text = Film;
         }
     }
 }

@@ -208,7 +208,6 @@ namespace Project_Bioskop
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            MessageBox.Show("Data Tersimpan");
 
             this.Hide();
             FormStrukSnack formStrukSnack = new FormStrukSnack();
@@ -217,20 +216,15 @@ namespace Project_Bioskop
             formStrukSnack.NamaStaff = comboBoxStaff.SelectedValue.ToString();
             formStrukSnack.Pesanan = Penjualan;
             formStrukSnack.TotalHarga = labelTotalHarga.Text;
-
             formStrukSnack.Text = comboBoxStaff.Text;
-
             formStrukSnack.Show();
-
-            
-
         }
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
-            form1.Show();
+            FormBioskop formBioskop = new FormBioskop();
+            formBioskop.Show();
         }
     }
 }

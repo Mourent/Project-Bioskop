@@ -420,6 +420,7 @@
             this.Controls.Add(this.cbMenu);
             this.Controls.Add(this.label1);
             this.Name = "FormKasirSnack";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kasir Snack";
             this.Load += new System.EventHandler(this.FormKasirSnack_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bykbrg)).EndInit();

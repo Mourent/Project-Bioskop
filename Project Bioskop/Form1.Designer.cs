@@ -1,7 +1,7 @@
 ﻿
 namespace Project_Bioskop
 {
-    partial class Form1
+    partial class FormCinema
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Project_Bioskop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCinema));
             this.btnGoStudio = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.cbStudio = new System.Windows.Forms.ComboBox();
@@ -48,7 +48,7 @@ namespace Project_Bioskop
             // 
             // btnGoStudio
             // 
-            this.btnGoStudio.Location = new System.Drawing.Point(376, 522);
+            this.btnGoStudio.Location = new System.Drawing.Point(376, 515);
             this.btnGoStudio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnGoStudio.Name = "btnGoStudio";
             this.btnGoStudio.Size = new System.Drawing.Size(186, 52);
@@ -71,7 +71,7 @@ namespace Project_Bioskop
             // cbStudio
             // 
             this.cbStudio.FormattingEnabled = true;
-            this.cbStudio.Location = new System.Drawing.Point(338, 400);
+            this.cbStudio.Location = new System.Drawing.Point(338, 393);
             this.cbStudio.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbStudio.Name = "cbStudio";
             this.cbStudio.Size = new System.Drawing.Size(307, 28);
@@ -81,7 +81,7 @@ namespace Project_Bioskop
             // labelStudio
             // 
             this.labelStudio.AutoSize = true;
-            this.labelStudio.Location = new System.Drawing.Point(264, 400);
+            this.labelStudio.Location = new System.Drawing.Point(264, 393);
             this.labelStudio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelStudio.Name = "labelStudio";
             this.labelStudio.Size = new System.Drawing.Size(63, 20);
@@ -91,7 +91,7 @@ namespace Project_Bioskop
             // cbJamTayang
             // 
             this.cbJamTayang.FormattingEnabled = true;
-            this.cbJamTayang.Location = new System.Drawing.Point(338, 455);
+            this.cbJamTayang.Location = new System.Drawing.Point(338, 448);
             this.cbJamTayang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbJamTayang.Name = "cbJamTayang";
             this.cbJamTayang.Size = new System.Drawing.Size(307, 28);
@@ -100,7 +100,7 @@ namespace Project_Bioskop
             // cbFilm
             // 
             this.cbFilm.FormattingEnabled = true;
-            this.cbFilm.Location = new System.Drawing.Point(338, 343);
+            this.cbFilm.Location = new System.Drawing.Point(338, 336);
             this.cbFilm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbFilm.Name = "cbFilm";
             this.cbFilm.Size = new System.Drawing.Size(307, 28);
@@ -109,7 +109,7 @@ namespace Project_Bioskop
             // 
             // dtpTanggal
             // 
-            this.dtpTanggal.Location = new System.Drawing.Point(338, 289);
+            this.dtpTanggal.Location = new System.Drawing.Point(338, 282);
             this.dtpTanggal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dtpTanggal.Name = "dtpTanggal";
             this.dtpTanggal.Size = new System.Drawing.Size(374, 26);
@@ -120,7 +120,7 @@ namespace Project_Bioskop
             // labelJamTayang
             // 
             this.labelJamTayang.AutoSize = true;
-            this.labelJamTayang.Location = new System.Drawing.Point(222, 460);
+            this.labelJamTayang.Location = new System.Drawing.Point(222, 453);
             this.labelJamTayang.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelJamTayang.Name = "labelJamTayang";
             this.labelJamTayang.Size = new System.Drawing.Size(103, 20);
@@ -130,7 +130,7 @@ namespace Project_Bioskop
             // labelFilm
             // 
             this.labelFilm.AutoSize = true;
-            this.labelFilm.Location = new System.Drawing.Point(282, 348);
+            this.labelFilm.Location = new System.Drawing.Point(282, 341);
             this.labelFilm.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelFilm.Name = "labelFilm";
             this.labelFilm.Size = new System.Drawing.Size(46, 20);
@@ -140,7 +140,7 @@ namespace Project_Bioskop
             // labelTgl
             // 
             this.labelTgl.AutoSize = true;
-            this.labelTgl.Location = new System.Drawing.Point(250, 289);
+            this.labelTgl.Location = new System.Drawing.Point(250, 282);
             this.labelTgl.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelTgl.Name = "labelTgl";
             this.labelTgl.Size = new System.Drawing.Size(74, 20);
@@ -150,7 +150,7 @@ namespace Project_Bioskop
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(34, 646);
+            this.label1.Location = new System.Drawing.Point(34, 639);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 20);
             this.label1.TabIndex = 21;
@@ -159,7 +159,7 @@ namespace Project_Bioskop
             // cbStaffTiket
             // 
             this.cbStaffTiket.FormattingEnabled = true;
-            this.cbStaffTiket.Location = new System.Drawing.Point(92, 643);
+            this.cbStaffTiket.Location = new System.Drawing.Point(92, 636);
             this.cbStaffTiket.Name = "cbStaffTiket";
             this.cbStaffTiket.Size = new System.Drawing.Size(194, 28);
             this.cbStaffTiket.TabIndex = 22;
@@ -169,13 +169,13 @@ namespace Project_Bioskop
             // 
             this.labelidstafftiket.AutoSize = true;
             this.labelidstafftiket.ForeColor = System.Drawing.SystemColors.ActiveBorder;
-            this.labelidstafftiket.Location = new System.Drawing.Point(301, 646);
+            this.labelidstafftiket.Location = new System.Drawing.Point(301, 639);
             this.labelidstafftiket.Name = "labelidstafftiket";
             this.labelidstafftiket.Size = new System.Drawing.Size(24, 20);
             this.labelidstafftiket.TabIndex = 23;
             this.labelidstafftiket.Text = "---";
             // 
-            // Form1
+            // FormCinema
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,8 +194,10 @@ namespace Project_Bioskop
             this.Controls.Add(this.labelFilm);
             this.Controls.Add(this.labelTgl);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Form1";
+            this.Name = "FormCinema";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CINEMA XXI";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

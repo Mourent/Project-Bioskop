@@ -30,6 +30,13 @@ namespace Project_Bioskop
             lblCashier.Text = Text;
             dgvMenu1.DataSource = Pesanan;
             labelTotal.Text = TotalHarga;
+            
+        }
+
+        private void FormStrukSnack_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormBioskop formBioskop = new FormBioskop();
+            formBioskop.Show();
         }
     }
 }

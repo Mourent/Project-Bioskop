@@ -170,7 +170,9 @@
             this.Controls.Add(this.labelcust);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormStrukSnack";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Struk Pembelian";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormStrukSnack_FormClosed);
             this.Load += new System.EventHandler(this.FormStrukSnack_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu1)).EndInit();

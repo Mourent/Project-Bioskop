@@ -67,14 +67,25 @@ namespace Project_Bioskop
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            MessageBox.Show("Data Masuk");
-            this.Hide();
-            Form1 form1 = new Form1();
-            form1.Show();
+            
 
             FormTiket formTiket = new FormTiket();
+            formTiket.Studio = Studio;
+            formTiket.Tgl = tgl;
+            formTiket.Kursi = Kursi;
+            formTiket.Film = Film;
             formTiket.Show();
 
+            this.Hide();
+            FormCinema form1 = new FormCinema();
+            form1.Show();
+
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            FormCinema formCinema = new FormCinema();
+            formCinema.Show();
         }
     }
 }

@@ -104,9 +104,9 @@
             this.labelKursi.AutoSize = true;
             this.labelKursi.Location = new System.Drawing.Point(270, 230);
             this.labelKursi.Name = "labelKursi";
-            this.labelKursi.Size = new System.Drawing.Size(52, 20);
+            this.labelKursi.Size = new System.Drawing.Size(51, 20);
             this.labelKursi.TabIndex = 6;
-            this.labelKursi.Text = "Date: ";
+            this.labelKursi.Text = "Seat: ";
             // 
             // lblSeat
             // 
@@ -131,6 +131,7 @@
             this.Controls.Add(this.lblJudulFilm);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormTiket";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket";
             this.Load += new System.EventHandler(this.Form10_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

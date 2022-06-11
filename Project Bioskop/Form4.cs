@@ -70,8 +70,8 @@ namespace Project_Bioskop
 		private void btnBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 form1 = new Form1();
-            form1.Show();
+            FormCinema formCinema = new FormCinema();
+            formCinema.Show();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

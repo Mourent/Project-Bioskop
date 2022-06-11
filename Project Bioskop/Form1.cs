@@ -5,9 +5,9 @@ using MySql.Data.MySqlClient;
 
 namespace Project_Bioskop
 {
-    public partial class Form1 : Form
+    public partial class FormCinema : Form
     {
-        public Form1()
+        public FormCinema()
         {
             InitializeComponent();
         }
@@ -114,7 +114,6 @@ namespace Project_Bioskop
             cbStaffTiket.DataSource = dtStaff;
             cbStaffTiket.DisplayMember = "NAMA_STAFF";
             cbStaffTiket.ValueMember = "ID_STAFF";
-
         }
 
         private void dtpTanggal_ValueChanged(object sender, EventArgs e)
@@ -176,6 +175,12 @@ namespace Project_Bioskop
 
 
             }
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormBioskop formBioskop = new FormBioskop();
+            formBioskop.Show();
         }
     }
 }

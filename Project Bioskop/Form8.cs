@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace Project_Bioskop
 {
-    public partial class Form8 : Form
+    public partial class FormBioskop : Form
     {
-        public Form8()
+        public FormBioskop()
         {
             InitializeComponent();
         }
@@ -13,7 +13,7 @@ namespace Project_Bioskop
         private void btnpilihtiket_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form1 Form1 = new Form1();  
+            FormCinema Form1 = new FormCinema();  
             Form1.Show();
         }
 
