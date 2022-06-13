@@ -16,7 +16,6 @@ namespace Project_Bioskop
             InitializeComponent();
             
         }
-        private string text;
         public string Text
         {
             get { return NamaStaff; }

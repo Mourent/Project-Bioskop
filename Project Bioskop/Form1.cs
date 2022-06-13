@@ -114,6 +114,7 @@ namespace Project_Bioskop
             cbStaffTiket.DataSource = dtStaff;
             cbStaffTiket.DisplayMember = "NAMA_STAFF";
             cbStaffTiket.ValueMember = "ID_STAFF";
+            labelidstafftiket.Text = cbStaffTiket.SelectedValue.ToString();
         }
 
         private void dtpTanggal_ValueChanged(object sender, EventArgs e)
@@ -163,16 +164,10 @@ namespace Project_Bioskop
         {
             try
             {
-                DataTable dtStaff = new DataTable();
-                sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL TIKET' and ID_STAFF = '" + cbStaffTiket.SelectedValue.ToString() + "';";
-                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-                sqlAdapter = new MySqlDataAdapter(sqlCommand);
-                sqlAdapter.Fill(dtStaff);
-                labelidstafftiket.Text = dtStaff.Rows[0][1].ToString();
+                labelidstafftiket.Text = cbStaffTiket.SelectedValue.ToString();
             }
             catch (Exception ex)
             {
-
 
             }
         }

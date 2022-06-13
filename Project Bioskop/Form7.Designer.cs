@@ -309,6 +309,7 @@
             this.comboBoxPembayaran.Name = "comboBoxPembayaran";
             this.comboBoxPembayaran.Size = new System.Drawing.Size(237, 28);
             this.comboBoxPembayaran.TabIndex = 66;
+            this.comboBoxPembayaran.SelectedIndexChanged += new System.EventHandler(this.comboBoxPembayaran_SelectedIndexChanged);
             // 
             // labelpay
             // 
@@ -422,6 +423,7 @@
             this.Name = "FormKasirSnack";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kasir Snack";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormKasirSnack_FormClosed);
             this.Load += new System.EventHandler(this.FormKasirSnack_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bykbrg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMenu)).EndInit();
