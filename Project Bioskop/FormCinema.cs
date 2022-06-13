@@ -119,26 +119,26 @@ namespace Project_Bioskop
 
         private void dtpTanggal_ValueChanged(object sender, EventArgs e)
         {
-            DataTable dtFilm = new DataTable();
-            sqlQuery = "select ID_FILM, JUDUL_FILM from FILM";
-            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(dtFilm);
-            cbFilm.DataSource = dtFilm;
-            cbFilm.DisplayMember = "JUDUL_FILM";
-            cbFilm.ValueMember = "ID_FILM";
+                DataTable dtFilm = new DataTable();
+                sqlQuery = "select f.ID_FILM, f.JUDUL_FILM from FILM f , JADWAL_TAYANG j where j.ID_FILM = f.ID_FILM and j.TANGGAL_TAYANG = '"+ dtpTanggal.Value.ToString("yyyy-MM-dd") + "' group by 1;";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtFilm);
+                cbFilm.DataSource = dtFilm;
+                cbFilm.DisplayMember = "JUDUL_FILM";
+                cbFilm.ValueMember = "ID_FILM";
         }
 
         private void cbFilm_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dtStudio = new DataTable();
-            sqlQuery = "select sb.ID_STUDIO, sb.JENIS_STUDIO from STUDIO_BIOSKOP sb, JADWAL_TAYANG jy, FILM f where sb.ID_STUDIO = jy.ID_STUDIO and f.ID_FILM = jy.ID_FILM and f.ID_FILM = '"+cbFilm.SelectedValue.ToString()+ "' and jy.TANGGAL_TAYANG = '" + dtpTanggal.Value.ToString("yyyy-MM-dd") + "' group by 1 order by 1;";
-            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(dtStudio);
-            cbStudio.DataSource = dtStudio;
-            cbStudio.DisplayMember = "JENIS_STUDIO";
-            cbStudio.ValueMember = "ID_STUDIO";
+                dtStudio = new DataTable();
+                sqlQuery = "select sb.ID_STUDIO, sb.JENIS_STUDIO from STUDIO_BIOSKOP sb, JADWAL_TAYANG jy, FILM f where sb.ID_STUDIO = jy.ID_STUDIO and f.ID_FILM = jy.ID_FILM and f.ID_FILM = '" + cbFilm.SelectedValue.ToString() + "' and jy.TANGGAL_TAYANG = '" + dtpTanggal.Value.ToString("yyyy-MM-dd") + "' group by 1 order by 1;";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(dtStudio);
+                cbStudio.DataSource = dtStudio;
+                cbStudio.DisplayMember = "JENIS_STUDIO";
+                cbStudio.ValueMember = "ID_STUDIO";
         }
 
         private void cbStudio_SelectedIndexChanged(object sender, EventArgs e)
@@ -155,9 +155,6 @@ namespace Project_Bioskop
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //FormKasirSnack formKasirSnack = new FormKasirSnack();
-            //formKasirSnack.Show();
         }
 
         private void cbStaffTiket_SelectedIndexChanged(object sender, EventArgs e)

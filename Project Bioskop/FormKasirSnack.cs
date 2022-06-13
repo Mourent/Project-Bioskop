@@ -82,13 +82,19 @@ namespace Project_Bioskop
                 
         }
         int plus = 0;
+        DataTable pilihSnack = new DataTable();
         private void button1_Click(object sender, EventArgs e)
         {
             if(labelIDSnack.Text != "---")
             {
+                sqlQuery = "SELECT NAMA_SNACK, ID_SNACK FROM SNACK WHERE ID_SNACK = '" + cbMenu.SelectedValue.ToString() + "' ;";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(pilihSnack);
+
                 plus = 0;
                 int sum = Convert.ToInt32(Math.Round(bykbrg.Value, 0));
-                var makandipilih = cbMenu.SelectedValue.ToString();
+                var makandipilih = cbMenu.Text;
                 var qtyne = bykbrg.Value.ToString();
                 var tothargae = sum * Convert.ToInt32(piro.Text);
                 dgvMenu.Rows.Add(makandipilih, qtyne, tothargae);
@@ -109,8 +115,10 @@ namespace Project_Bioskop
         {
             foreach (DataGridViewRow row in dgvMenu.SelectedRows)
             {
+                pilihSnack.Rows.RemoveAt(row.Index);
                 dgvMenu.Rows.RemoveAt(row.Index);
             }
+            
 
             int plus = 0;
             for (int i = 0; i < dgvMenu.Rows.Count; i++)
@@ -136,6 +144,7 @@ namespace Project_Bioskop
 
         private void button3_Click(object sender, EventArgs e)
         {
+            pilihSnack = new DataTable();
             dgvMenu.Rows.Clear();
             int plus = 0;
             for (int i = 0; i < dgvMenu.Rows.Count; i++)
@@ -190,6 +199,7 @@ namespace Project_Bioskop
         {
             if(labelchange.Text != "---")
             {
+                
                 DataTable idJualSnack = new DataTable();
                 sqlQuery = "select ID_JUAL_SNACK from PENJUALAN_SNACK";
                 sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -214,7 +224,7 @@ namespace Project_Bioskop
                 for (int i = 0; i < dgvMenu.Rows.Count - 1; i++)
                 {
                     totalQty += Convert.ToInt32(dgvMenu.Rows[i].Cells[1].Value);
-                    sqlQuery = "insert into PENJUALAN_SNACK2 values(concat('JS','" + hitungID + "'),'" + dgvMenu.Rows[i].Cells[0].Value.ToString() + "','" + dgvMenu.Rows[i].Cells[1].Value.ToString() + "');";
+                    sqlQuery = "insert into PENJUALAN_SNACK2 values(concat('JS','" + hitungID + "'),'" + pilihSnack.Rows[i][1] + "','" + dgvMenu.Rows[i].Cells[1].Value.ToString() + "');";
                     sqlConnect.Open();
                     sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
                     sqlCommand.ExecuteNonQuery();
@@ -234,6 +244,7 @@ namespace Project_Bioskop
                 formStrukSnack.TotalHarga = labelTotalHarga.Text;
                 formStrukSnack.Text = comboBoxStaff.Text;
                 formStrukSnack.Show();
+                pilihSnack = new DataTable();
             }
             else
             {
@@ -243,6 +254,7 @@ namespace Project_Bioskop
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
+            pilihSnack = new DataTable();
             this.Hide();
             FormBioskop formBioskop = new FormBioskop();
             formBioskop.Show();

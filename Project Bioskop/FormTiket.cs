@@ -39,5 +39,11 @@ namespace Project_Bioskop
             lblSeat.Text = Kursi;
             lblJudulFilm.Text = Film;
         }
+
+        private void FormTiket_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FormBioskop formBioskop = new FormBioskop();
+            formBioskop.Show();
+        }
     }
 }

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 
 namespace Project_Bioskop
 {
@@ -51,10 +51,11 @@ namespace Project_Bioskop
             int count = idJualTiket.Rows.Count;
             count++;
             string hitungID = "";
-            if(count.ToString().Length == 1)
+            if (count.ToString().Length == 1)
             {
                 hitungID = "00" + count.ToString();
-            }else if(count.ToString().Length == 2)
+            }
+            else if (count.ToString().Length == 2)
             {
                 hitungID = "0" + count.ToString();
             }
@@ -62,24 +63,18 @@ namespace Project_Bioskop
             {
                 hitungID = count.ToString();
             }
-            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat('IDT','"+hitungID+"'), '"+IdStaff+"', '"+IdJadwal+"', '"+tgl+"', '"+BanyakKursi+"', '"+TotalHarga+"', '"+Kursi+"', '0');";
+            sqlQuery = "INSERT INTO PENJUALAN_TIKET VALUES (concat('IDT','" + hitungID + "'), '" + IdStaff + "', '" + IdJadwal + "', '" + tgl + "', '" + BanyakKursi + "', '" + TotalHarga + "', '" + Kursi + "', '0');";
             sqlConnect.Open();
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlCommand.ExecuteNonQuery();
             sqlConnect.Close();
-            
-
+            this.Hide();
             FormTiket formTiket = new FormTiket();
             formTiket.Studio = Studio;
             formTiket.Tgl = tgl;
             formTiket.Kursi = Kursi;
             formTiket.Film = Film;
             formTiket.Show();
-
-            this.Hide();
-            FormCinema form1 = new FormCinema();
-            form1.Show();
-
         }
 
         private void buttonBack_Click(object sender, EventArgs e)

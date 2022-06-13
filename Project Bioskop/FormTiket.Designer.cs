@@ -133,6 +133,7 @@
             this.Name = "FormTiket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ticket";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTiket_FormClosed);
             this.Load += new System.EventHandler(this.Form10_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
