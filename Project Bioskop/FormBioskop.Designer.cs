@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBioskop));
             this.btnpilihtiket = new System.Windows.Forms.Button();
             this.btnpilihsnack = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -35,7 +36,7 @@
             // btnpilihtiket
             // 
             this.btnpilihtiket.Font = new System.Drawing.Font("Mongolian Baiti", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpilihtiket.Location = new System.Drawing.Point(107, 137);
+            this.btnpilihtiket.Location = new System.Drawing.Point(69, 147);
             this.btnpilihtiket.Name = "btnpilihtiket";
             this.btnpilihtiket.Size = new System.Drawing.Size(126, 76);
             this.btnpilihtiket.TabIndex = 0;
@@ -46,7 +47,7 @@
             // btnpilihsnack
             // 
             this.btnpilihsnack.Font = new System.Drawing.Font("Mongolian Baiti", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpilihsnack.Location = new System.Drawing.Point(308, 137);
+            this.btnpilihsnack.Location = new System.Drawing.Point(369, 147);
             this.btnpilihsnack.Name = "btnpilihsnack";
             this.btnpilihsnack.Size = new System.Drawing.Size(128, 77);
             this.btnpilihsnack.TabIndex = 1;
@@ -58,9 +59,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 354);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(575, 362);
             this.Controls.Add(this.btnpilihsnack);
             this.Controls.Add(this.btnpilihtiket);
+            this.DoubleBuffered = true;
             this.Name = "FormBioskop";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CINEMA 551";

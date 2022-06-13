@@ -84,7 +84,7 @@ namespace Project_Bioskop
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             FormCinema formCinema = new FormCinema();
             formCinema.Show();
         }
