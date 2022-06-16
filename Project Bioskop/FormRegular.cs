@@ -34,7 +34,7 @@ namespace Project_Bioskop
         public MySqlDataReader sqlDataReader;
         public string sqlQuery;
 
-        private void Form2_Load(object sender, EventArgs e)
+        private void FormRegular_Load(object sender, EventArgs e)
         {
             labelOutputTgl.Text = tgl;
             labelOutputFilm.Text = Film;

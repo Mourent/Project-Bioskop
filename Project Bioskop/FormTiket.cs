@@ -32,7 +32,7 @@ namespace Project_Bioskop
 
         }
 
-        private void Form10_Load(object sender, EventArgs e)
+        private void FormTiket_Load(object sender, EventArgs e)
         {
             labelTheater.Text = Studio;
             lblTanggalMain.Text = Tgl;

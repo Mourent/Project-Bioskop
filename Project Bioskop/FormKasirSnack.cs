@@ -83,7 +83,7 @@ namespace Project_Bioskop
         }
         int plus = 0;
         DataTable pilihSnack = new DataTable();
-        private void button1_Click(object sender, EventArgs e)
+        private void buttonAdd_Click(object sender, EventArgs e) //add item
         {
             if(labelIDSnack.Text != "---")
             {
@@ -111,7 +111,7 @@ namespace Project_Bioskop
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void buttonDelete_Click(object sender, EventArgs e) //delete
         {
             foreach (DataGridViewRow row in dgvMenu.SelectedRows)
             {
@@ -142,7 +142,7 @@ namespace Project_Bioskop
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void buttonReset_Click(object sender, EventArgs e) // reset
         {
             pilihSnack = new DataTable();
             dgvMenu.Rows.Clear();
@@ -154,7 +154,7 @@ namespace Project_Bioskop
             labelTotalHarga.Text = plus.ToString();
         }
         DataTable Penjualan = new DataTable();
-        private void button4_Click(object sender, EventArgs e)
+        private void buttonPay_Click(object sender, EventArgs e) //pay
         {
             Penjualan = new DataTable();
             foreach (DataGridViewColumn col in dgvMenu.Columns)
@@ -195,7 +195,7 @@ namespace Project_Bioskop
             
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void buttonFinish_Click(object sender, EventArgs e) // finish
         {
             if(labelchange.Text != "---")
             {
@@ -219,7 +219,7 @@ namespace Project_Bioskop
                 else
                 {
                     hitungID = count.ToString();
-                }
+                }           
                 int totalQty = 0;
                 for (int i = 0; i < dgvMenu.Rows.Count - 1; i++)
                 {

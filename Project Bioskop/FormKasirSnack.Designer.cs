@@ -94,7 +94,7 @@
             this.buttonReset.TabIndex = 60;
             this.buttonReset.Text = "Reset Order";
             this.buttonReset.UseVisualStyleBackColor = true;
-            this.buttonReset.Click += new System.EventHandler(this.button3_Click);
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // label8
             // 
@@ -114,7 +114,7 @@
             this.buttonDelete.TabIndex = 58;
             this.buttonDelete.Text = "Delete Item";
             this.buttonDelete.UseVisualStyleBackColor = true;
-            this.buttonDelete.Click += new System.EventHandler(this.button2_Click);
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonAdd
             // 
@@ -125,7 +125,7 @@
             this.buttonAdd.TabIndex = 57;
             this.buttonAdd.Text = "Add Item";
             this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // piro
             // 
@@ -252,7 +252,7 @@
             this.buttonFinish.TabIndex = 72;
             this.buttonFinish.Text = "Finish ";
             this.buttonFinish.UseVisualStyleBackColor = true;
-            this.buttonFinish.Click += new System.EventHandler(this.button6_Click);
+            this.buttonFinish.Click += new System.EventHandler(this.buttonFinish_Click);
             // 
             // labelchange
             // 
@@ -289,7 +289,7 @@
             this.buttonPay.TabIndex = 68;
             this.buttonPay.Text = "Pay";
             this.buttonPay.UseVisualStyleBackColor = true;
-            this.buttonPay.Click += new System.EventHandler(this.button4_Click);
+            this.buttonPay.Click += new System.EventHandler(this.buttonPay_Click);
             // 
             // label7
             // 

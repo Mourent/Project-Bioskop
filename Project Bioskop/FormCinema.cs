@@ -105,7 +105,7 @@ namespace Project_Bioskop
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void FormCinema_Load(object sender, EventArgs e)
         {
             sqlQuery = "SELECT NAMA_STAFF, ID_STAFF FROM STAFF where JABATAN_PEGAWAI = 'PENJUAL TIKET'; ";
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
@@ -169,7 +169,7 @@ namespace Project_Bioskop
             }
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void FormCinema_FormClosed(object sender, FormClosedEventArgs e)
         {
             FormBioskop formBioskop = new FormBioskop();
             formBioskop.Show();
