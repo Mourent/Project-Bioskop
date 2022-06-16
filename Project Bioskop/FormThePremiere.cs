@@ -73,36 +73,45 @@ namespace Project_Bioskop
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            string kursi = "";
-            int hitungKursi = 0;
-            this.Hide();
+            string kursi = "";// catet kursi yg dibeli
+            int hitungKursi = 0; // total kursi yg dibeli (buat catet di database)
+            int cekKuning = 0;
             foreach (var button in this.Controls.OfType<Button>())
             {
                 if (button.BackColor == Color.Yellow)
                 {
                     hitungKursi += 1;
-                    button.Enabled = false;
                     kursi += button.Text + ";";
+                    cekKuning += 1;
                 }
             }
-            DataTable totalHarga = new DataTable();
-            sqlQuery = "select HARGA_TIKET * '" + hitungKursi + "' , HARGA_TIKET from JADWAL_TAYANG  where ID_STUDIO = '" + idStudio + "' and ID_FILM = '" + idFilm + "' and TANGGAL_TAYANG = '" + tgl + "' and JAM_TAYANG = '" + JamTayang + "'";
-            sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
-            sqlAdapter = new MySqlDataAdapter(sqlCommand);
-            sqlAdapter.Fill(totalHarga);
+            if (cekKuning == 0)
+            {
+                MessageBox.Show("Pilih Kursi!");
+            }
+            else
+            {
+                this.Hide();
+                DataTable totalHarga = new DataTable();
+                sqlQuery = "select HARGA_TIKET * '" + hitungKursi + "' , HARGA_TIKET from JADWAL_TAYANG  where ID_STUDIO = '" + idStudio + "' and ID_FILM = '" + idFilm + "' and TANGGAL_TAYANG = '" + tgl + "' and JAM_TAYANG = '" + JamTayang + "'";
+                sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
+                sqlAdapter = new MySqlDataAdapter(sqlCommand);
+                sqlAdapter.Fill(totalHarga);
 
-            FormKonfirmasi formKonfirmasi = new FormKonfirmasi();
-            formKonfirmasi.Film = labelOutputFilm.Text;
-            formKonfirmasi.tgl = labelOutputTgl.Text;
-            formKonfirmasi.JamTayang = labelOutputJamTayang.Text;
-            formKonfirmasi.Studio = labelOutputStudio.Text;
-            formKonfirmasi.Kursi = kursi;
-            formKonfirmasi.TotalHarga = totalHarga.Rows[0][0].ToString();
-            formKonfirmasi.Harga = totalHarga.Rows[0][1].ToString();
-            formKonfirmasi.BanyakKursi = hitungKursi.ToString();
-            formKonfirmasi.IdJadwal = IdJadwal;
-            formKonfirmasi.IdStaff = IdStaff;
-            formKonfirmasi.Show();
+                FormKonfirmasi formKonfirmasi = new FormKonfirmasi();
+                formKonfirmasi.Film = labelOutputFilm.Text;
+                formKonfirmasi.tgl = labelOutputTgl.Text;
+                formKonfirmasi.JamTayang = labelOutputJamTayang.Text;
+                formKonfirmasi.Studio = labelOutputStudio.Text;
+                formKonfirmasi.Kursi = kursi;
+                formKonfirmasi.TotalHarga = totalHarga.Rows[0][0].ToString();
+                formKonfirmasi.Harga = totalHarga.Rows[0][1].ToString();
+                formKonfirmasi.BanyakKursi = hitungKursi.ToString();
+                formKonfirmasi.IdJadwal = IdJadwal;
+                formKonfirmasi.IdStaff = IdStaff;
+
+                formKonfirmasi.Show();
+            }
         }
 
         private void btnA1_Click(object sender, EventArgs e)

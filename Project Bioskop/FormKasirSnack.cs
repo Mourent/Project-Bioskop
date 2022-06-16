@@ -179,7 +179,15 @@ namespace Project_Bioskop
                     int titip;
 
                     titip = value - totalvalue;
-                    labelchange.Text = titip.ToString();
+                    if(titip < 0)
+                    {
+                        MessageBox.Show("Uang Kurang!");
+                    }
+                    else
+                    {
+                        labelchange.Text = titip.ToString();
+                    }
+
                 }
                 else if (comboBoxPembayaran.SelectedIndex == 1)
                 {
