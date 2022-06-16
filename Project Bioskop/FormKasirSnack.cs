@@ -270,5 +270,10 @@ namespace Project_Bioskop
         {
 
         }
+
+        private void textBoxcash_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
+        }
     }
 }

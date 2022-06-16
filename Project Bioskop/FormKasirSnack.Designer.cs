@@ -269,6 +269,7 @@
             this.textBoxcash.Name = "textBoxcash";
             this.textBoxcash.Size = new System.Drawing.Size(237, 26);
             this.textBoxcash.TabIndex = 70;
+            this.textBoxcash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxcash_KeyPress);
             // 
             // label10
             // 
