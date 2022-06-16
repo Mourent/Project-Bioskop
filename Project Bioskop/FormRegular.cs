@@ -46,12 +46,11 @@ namespace Project_Bioskop
             sqlCommand = new MySqlCommand(sqlQuery, sqlConnect);
             sqlAdapter = new MySqlDataAdapter(sqlCommand);
             sqlAdapter.Fill(kursiTerisi);
-            string[] arrray = kursiTerisi.Rows.OfType<DataRow>().Select(k => k[0].ToString()).ToArray();
             var arlistKursi = new ArrayList(); // buat nampung yg udh dipisah ; nya
 
-            for (int i = 0; i < arrray.Length; i++)
+            for (int i = 0; i < kursiTerisi.Rows.Count; i++)
             {
-                string[] subs = arrray[i].ToString().Split(';');
+                string[] subs = kursiTerisi.Rows[i][0].ToString().Split(';');
                 foreach (var arr in subs)
                 {
                     arlistKursi.Add(arr);
