@@ -371,9 +371,11 @@
             // dateTimePickerSnack
             // 
             this.dateTimePickerSnack.Location = new System.Drawing.Point(967, 22);
+            this.dateTimePickerSnack.MinDate = new System.DateTime(2022, 5, 20, 0, 0, 0, 0);
             this.dateTimePickerSnack.Name = "dateTimePickerSnack";
             this.dateTimePickerSnack.Size = new System.Drawing.Size(323, 26);
             this.dateTimePickerSnack.TabIndex = 76;
+            this.dateTimePickerSnack.Value = new System.DateTime(2022, 6, 16, 11, 46, 29, 0);
             // 
             // label11
             // 
